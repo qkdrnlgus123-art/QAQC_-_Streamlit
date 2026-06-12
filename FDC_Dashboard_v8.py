@@ -113,8 +113,8 @@ BASE_LAYOUT = dict(font=dict(family='Arial, sans-serif', size=13),
     # 수정
 def load_and_run():
     # 수정
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    df = pd.read_csv(os.path.join(BASE_DIR, 'all_Time_re_data.csv'), index_col=0)
+    url = 'https://drive.google.com/uc?id=1UN6Z09TDZBmubJZYeoVpaf_D1CRRYndm&export=download'
+    df = pd.read_csv(url, index_col=0)
     df['fault_name'] = df['fault_name'].str.strip()
     META = ['wafer_id','t_norm','fault','fault_name','Step Number']
     rfm_cols = [c for c in df.columns if c.startswith('S') and c not in META]
